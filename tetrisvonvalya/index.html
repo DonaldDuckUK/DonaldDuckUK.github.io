@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tetris</title>
+    <link rel='stylesheet' type="text/css" href='tetrisstyle.css'/>
+</head>
+<body>
+
+<div id="tetris">
+    <div id="tetrisleft">
+        <style>
+            #tetris   { margin: 1em auto; padding: 1em; border: 4px solid black; border-radius: 10px; background-color: #F8F8F8; }
+            </style>
+        <canvas id="tetriscanvas" width="300" height="600"></canvas>
+        <h3><audio id="clearsound" src="sound/pop.ogg" preload="auto"></audio>
+        <audio src = "music.mp3" controls ></audio></h3>
+    </div>
+    <div id="tetrisright">
+        <h4><div align="center"><b>T E T R I S</b></div></h4>
+        <h5><p class="info">&harr;: MOVE LEFT/RIGHT
+            <br>
+            <br>&uarr;: ROTATE
+            <br>
+            <br>&darr; : DROP
+            <br>
+            <br>Esc: PAUSE
+        </p>
+        </h5>
+        <canvas id="figurecanvas" width="120" height="120"></canvas>
+        <h6><p class="info" id="tetriscount"></p></h6>
+    </div>
+    <div class="clear"></div>
+</div>
+
+<div>
+    <div id="tetris_buttons">
+        <input type="button" class="btn" value="pause" onclick="keyPress('escape');return false;">
+        <input type="button" class="btn" value="&larr;" onclick="keyPress('left');return false;">
+        <input type="button" class="btn" value="&reg;" onclick="keyPress('rotate');return false;">
+        <input type="button" class="btn" value="&rarr;" onclick="keyPress('right');return false;">
+        <input type="button" class="btn" value="&darr;" onclick="keyPress('down');return false;">
+    </div>
+</div>
+<script src='game.js'></script>
+<script src='controller.js'></script>
+<script src='canvas.js'></script>
+</body>
+</html>
